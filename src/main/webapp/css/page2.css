@@ -1,0 +1,351 @@
+
+body {
+   /* width: 192px;*/
+    width: 1536px;
+    min-width: 1360px;
+}
+
+
+.top {
+    background-color: #ffffff;
+    width: 1536px;
+    height: 88px;
+}
+
+.top-left {
+    width: 275.2px;
+    height: 87.2px;
+    box-shadow: 1.6px 1.6px 8px rgba(0, 0, 0, 0.2);
+    float: left;
+}
+
+.top-right{
+    background-color: #ffffff;
+    width: 1260.8px;
+    height: 88px;
+    float: right;
+}
+
+.left-1{
+    width: 116px;
+    height: 40px;
+    font-size: 19.2px;
+    font-family: SimHei;
+    color: #000000;
+    float: left;
+    margin-top: 32px;
+    margin-left: 32px;
+}
+
+.left-2{
+    width: 68px;
+    height: 24px;
+    font-size: 14.4px;
+    font-family: SimHei;
+    color: #000000;
+    float: right;
+    margin-top: 36px;
+    margin-right: 32px;
+}
+
+
+
+.right-1{
+    height: 40px;
+    width: 176px;
+    float: right;
+    margin-right: 56px;
+    margin-top: 28px;
+    overflow: hidden;
+}
+
+.a-1,.a-2{
+    height: 40px;
+    width: 80px;
+}
+.a-1{
+    float: left;
+}
+.a-2{
+    float: right;
+}
+.a-1 img,.a-2 img{
+    width: 100%;
+}
+
+
+.box-left{
+    background-color: #ffffff;
+    width: 275.2px;
+    height: 777.6px;
+    float: left;
+}
+
+.box-left-1{
+    width: 275.2px;
+    height: 117.6px;
+    border-bottom-style: solid;
+    border-width:0.8px ;
+    border-bottom-color:#bfbfbf;
+}
+
+.box-left-1-left{
+    height: 57.6px;
+    width: 56.8px;
+    float: left;
+    margin-left: 52px;
+    margin-top: 28px;
+}
+
+.box-left-1-left img{
+    width: 100%;
+}
+.box-left-1-right{
+    height: 57.6px;
+    width: 72px;
+    float: right;
+    margin-top: 40px;
+    margin-right: 84px;
+}
+
+.r2{
+    margin-left: 16px;
+    margin-top: 8px;
+}
+
+p{
+    font-size: 14.4px;
+    font-family: SimHei;
+    color: #000000;
+}
+
+.box-left-2{
+    height: 656px;
+    width: 275.2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.box-left-2-1{
+    width: 240px;
+    font-size: 14.4px;
+    color: #666666;
+    font-family: SimHei;
+}
+
+.img-1{
+    margin-left: 40px;
+    float: left;
+    width: 32px;
+    height: 32px;
+}
+
+.img-1 img{
+    width: 100%;
+}
+
+.wen-1{
+    margin-left: 96px;
+    margin-top: 8px;
+}
+
+.i-1{
+    width: 32px;
+    height: 16px;
+    float: right;
+    margin-top: -15.2px;
+    margin-right: 40px;
+}
+
+i{
+    width: 100%;
+}
+
+
+ul {
+    flex-direction: column;
+    width: 80px;
+    height: 160px;
+    justify-content: space-between;
+    margin-left: 160px;
+    margin-top: 0px;
+}
+.cl{
+    width:80px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14.4px;
+    color:#666666;
+    font-family: SimHei;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ccl {
+}
+.cl:hover {
+    height: 32px;
+    width: 80px;
+    background-color: #39f;
+    border-radius: 13.6px;
+    border: 0.8px solid #ffffff;
+    color:#000000;
+}
+
+
+.box-right{
+    width: 1260.8px;
+    height: 777.6px;
+    background-color: #94c8fd;
+    float: right;
+}
+
+.center {
+    width: 1151.2px;
+    height: 721.6px;
+    background-color: #ffffff;
+    margin-top: 32px;
+    margin-left: 56px;
+}
+
+.center-top {
+    width: 1151.2px;
+    height: 93.6px;
+    border-bottom-width: 0.8px;
+    border-bottom-color: #bfbfbf;
+    border-bottom-style: solid;
+}
+
+.p1 {
+    margin-top: 29.6px;
+    margin-left: 36px;
+    font-size: 22.4px;
+    color: #333333;
+    font-family: SimHei;
+    position: absolute;
+}
+
+.p2 {
+    margin-top: 66.4px;
+    margin-left: 36px;
+    font-size: 16.8px;
+    color: #999999;
+    font-family: SimHei;
+    position: absolute;
+}
+
+.between {
+    height: 149.6px;
+    width: 1151.2px;
+
+}
+
+input {
+    height: 28.8px;
+    width: 248.8px;
+    border-radius: 7.2px;
+}
+
+.submit {
+    width: 104px;
+    height: 41.6px;
+    background-color: #39f;
+    border-radius: 7.2px;
+    font-size: 19.2px;
+    color: #ffffff;
+    font-family: SimHei;
+    margin-top: 16px;
+}
+
+.reset {
+    width: 104px;
+    height: 41.6px;
+
+    border-radius: 7.2px;
+    font-family: SimHei;
+    font-size: 19.2px;
+    margin-top: 8px;
+}
+
+.button {
+    margin-top: 32px;
+    background-color: #f00;
+    width: 104px;
+    height: 41.6px;
+    border-radius: 7.2px;
+    font-size: 19.2px;
+    font-family: SimHei;
+}
+
+.box1 {
+    margin-left: 64px;
+    height: 149.6px;
+    width: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    float: left;
+
+}
+
+.box2 {
+    float: right;
+}
+
+
+.box1-1, .box1-2 {
+    display: flex;
+    margin-top: 16px;
+    width: 700px;
+}
+
+.d1, .d2, .d3, .d4 {
+    width: 450px;
+    height: 41.6px;
+}
+
+input {
+    margin-left: 12px;
+}
+
+
+.box2 {
+    height: 41.6px;
+    width: 260px;
+    float: right;
+}
+
+.bottom {
+    width: 1071.2px;
+    height: 80px;
+}
+
+.bottom-tr {
+    width: 1071.2px;
+    height: 80px;
+    background-color: #cccccc;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.studentData{
+    font-size: 16px;
+    width: 1071.2px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.m {
+    width: 48px;
+    height: 18.4px;
+    font-size: 21.12px;
+    color: #000000;
+    font-family: SimHei;
+    margin-top: 32px;
+}

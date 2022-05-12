@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/reseat.css">
+        <link rel="stylesheet" href="./css/all.css">
+        <link rel="stylesheet" href="./css/page1.css">
+        <script src="js/vue.js"></script>
+        <script>
+            (function (document) {
+                var dcl = document.documentElement, wh;
+                
+                function setRootRem() {
+                    wh = dcl.clientWidth; //获取元素的宽度
+                    dcl.style.fontSize = 10 * (wh / 1920) + 'px';
+                }
+                
+                setRootRem();
+                document.addEventListener('DOMContentLoaded', setRootRem, false);  //DOMContentLoaded事件 当初始的html文档全部加载完成后触发 不等待css样式表的加载
+                window.addEventListener('resize', setRootRem, false); //resize事件 监听窗口的大小来触发事件
+            })(document);
+        </script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="box">
+                <div class="top">
+                    <div class="top-left" style="box-shadow:0px 0px 5px 0px #aaa inset;">
+                        <p class="left-1">湖南科技大学</p>
+                        <p class="left-2">出卷系统</p>
+                    </div>
+                    <div class="top-right" style="box-shadow:0px 0px 5px 0px #aaa inset;">
+                        <div class="right-1">
+                            <div class="a-1">
+                                <a href="manage1.html">
+                                    <img src="images/refresh.png" alt="">
+                                </a>
+                            </div>
+                            <div class="a-2">
+                                <a href="manage1.html" class="a-2">
+                                    <img src="images/quiet.png" alt="">
+                                </a>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="box-left">
+                    <div class="box-left-1">
+                        <div class="box-left-1-left">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="box-left-1-right">
+                            <p class="r1">院级管理员</p>
+                            <p class="r2">张三</p>
+                        </div>
+                    </div>
+                    <div class="box-left-2">
+                        <div class="box-left-2-1 c1">
+                            <div class="img-1 c3"><img src="images/3.png" alt=""></div>
+                            <div class="wen-1 c4">用户管理</div>
+                            <div class="ul-li">
+                                <div class="i-1">
+                                    <i class="fas fa-angle-left" @click="showList" v-show="!isShow"></i>
+                                    <i class="fas fa-angle-down" @click="showList" v-show="isShow"></i>
+                                </div>
+                                <ul v-show="isShow">
+                                    <div class="cl ccl"><a href="manage2.html">学生列表</a></div>
+                                    <div class="cl"><a href="">老师列表</a></div>
+                                    <div class="cl"><a href="">批量导入</a></div>
+                                    <div class="cl"><a href="">发布通知</a></div>
+                                    <div class="cl"><a href="">审核注册</a></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box-left-2-1 c2">
+                            <div class="img-1"><img src="images/4.png" alt=""></div>
+                            <div class="wen-1">课程管理</div>
+                            <div class="i-1"><i class="fas fa-angle-left"></i></div>
+                        </div>
+                        <div class="box-left-2-1">
+                            <div class="img-1"><img src="images/5.png" alt=""></div>
+                            <div class="wen-1">课程组管理</div>
+                        </div>
+                        <div class="box-left-2-1">
+                            <div class="img-1"><img src="images/6.png" alt=""></div>
+                            <div class="wen-1">班级管理</div>
+                        </div>
+                        <div class="box-left-2-1">
+                            <div class="img-1"><img src="images/7.png" alt=""></div>
+                            <div class="wen-1">专业管理</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-right">
+                    <div class="box-right-top">
+                        <div class="box-right-top-left">
+                            <div class="brtl-top">
+                                <p class="p1">信息系统</p>
+                                <p class="p2">本日信息系统内容已经更新</p>
+                            </div>
+                            <div class="brtl-bottom">
+                                <div class="bottom-top">
+                                    <div class="li-1">
+                                        <div class="li-1-1">学生账号数</div>
+                                        <div class="li-1-2">1245</div>
+                                    </div>
+                                    <div class="li-1">
+                                        <div class="li-1-1">老师账号数</div>
+                                        <div class="li-1-2">1245</div>
+                                    </div>
+                                    <div class="li-1">
+                                        <div class="li-1-1">课程数</div>
+                                        <div class="li-1-2">52</div>
+                                    </div>
+                                </div>
+                                <div class="bottom-bottom">
+                                    <div class="li-2">
+                                        <div class="li-2-1 l-1-1">课程组数</div>
+                                        <div class="li-2-2 l-1-2">62</div>
+                                    </div>
+                                    <div class="li-2">
+                                        <div class="li-2-1 l-2-1">班级数</div>
+                                        <div class="li-2-2 l-2-2">124</div>
+                                    </div>
+                                    <div class="li-2">
+                                        <div class="li-2-1">专业数</div>
+                                        <div class="li-2-2">10</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-right-top-right">
+                            <div class="brtl-top">
+                                <p class="p1">管理员系统</p>
+                                <p class="p2">本日管理员信息已经更新</p>
+                            </div>
+                            <div class="brtl-bottom-1">
+                                <img src="images/1.png" alt="">
+                            </div>
+                            <div class="brtl-bottom-2">张三</div>
+                            <div class="brtl-bottom-3 b1">123456</div>
+                            <div class="brtl-bottom-4 b2">计算机科学与工程学院</div>
+                            <div class="brtl-bottom-5">
+                                <div class="brtlb-1">
+                                    <img src="images/pwd.png" alt="">
+                                </div>
+                                <div class="brtlb-2">
+                                    <a href="#">修改密码</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-right-bottom">
+                        <div class="box-right-bottom-top">
+                            <div class="brbt-top">
+                                <p class="p1">管理权限</p>
+                                <p class="p2">本日管理权限内容已经更新</p>
+                            </div>
+                        </div>
+                        <div class="box-right-bottom-bottom">
+                            <div class="brbb-bottom">
+                                <div class="li-ol">
+                                    <a href="#"><img src="images/2.png" alt=""></a>
+                                </div>
+                                <div class="li-ol">
+                                    <a href="#"><img src="images/2.png" alt=""></a>
+                                </div>
+                                <div class="li-ol">
+                                    <a href="#"><img src="images/2.png" alt=""></a>
+                                </div>
+                                <div class="li-ol">
+                                    <a href="#"><img src="images/2.png" alt=""></a>
+                                </div>
+                                <div class="li-ol">
+                                    <a href="#"><img src="images/2.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            new Vue({
+                el:"#app",
+                data(){
+                    return{
+                        isShow:false
+                    }
+                },
+                methods:{
+                    showList:function () {
+                        this.isShow = !this.isShow;
+                    }
+                }
+            })
+        </script>
+    </body>
+
+</html>

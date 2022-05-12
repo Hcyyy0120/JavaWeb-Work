@@ -1,0 +1,385 @@
+
+body{
+    width: 1536px;
+    min-width: 1360px;
+}
+
+.top{
+    background-color: #ffffff;
+    width: 1536px;
+    height: 88px;
+}
+
+.top-left{
+    width: 275.2px;
+    height: 87.2px;
+    box-shadow: 1.6px 1.6px 8px rgba(0, 0, 0, 0.2);
+    float: left;
+}
+
+.top-right{
+    background-color: #ffffff;
+    width: 1260.8px;
+    height: 88px;
+    float: right;
+}
+
+.left-1{
+    width: 116px;
+    height: 40px;
+    font-size: 19.2px;
+    font-family: SimHei;
+    color: #000000;
+    float: left;
+    margin-top: 32px;
+    margin-left: 32px;
+}
+
+.left-2{
+    width: 68px;
+    height: 24px;
+    font-size: 14.4px;
+    font-family: SimHei;
+    color: #000000;
+    float: right;
+    margin-top: 36px;
+    margin-right: 32px;
+}
+
+.right-1{
+    height: 40px;
+    width: 176px;
+    float: right;
+    margin-right: 56px;
+    margin-top: 28px;
+    overflow: hidden;
+}
+
+.a-1,.a-2{
+    height: 40px;
+    width: 80px;
+}
+.a-1{
+    float: left;
+}
+.a-2{
+    float: right;
+}
+.a-1 img,.a-2 img{
+    width: 100%;
+}
+
+.box-left{
+    background-color: #ffffff;
+    width: 275.2px;
+    height: 777.6px;
+    float: left;
+}
+
+
+.box-left-1{
+    width: 275.2px;
+    height: 117.6px;
+    border-bottom-style: solid;
+    border-width:0.8px ;
+    border-bottom-color:#bfbfbf;
+}
+
+.box-left-1-left{
+    height: 57.6px;
+    width: 56.8px;
+    float: left;
+    margin-left: 52px;
+    margin-top: 28px;
+}
+
+.box-left-1-left img{
+    width: 100%;
+}
+
+.box-left-1-right{
+    height: 57.6px;
+    width: 72px;
+    float: right;
+    margin-top: 40px;
+    margin-right: 84px;
+}
+.r2{
+    margin-left: 16px;
+    margin-top: 8px;
+}
+
+p{
+    font-size: 14.4px;
+    font-family: SimHei;
+    color: #000000;
+}
+
+.box-left-2{
+    height: 656px;
+    width: 275.2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.box-left-2-1{
+    width: 240px;
+
+    font-size: 14.4px;
+    color: #666666;
+    font-family: SimHei;
+}
+
+.img-1{
+    margin-left: 40px;
+    float: left;
+    width: 32px;
+    height: 32px;
+}
+
+.img-1 img{
+    width: 100%;
+}
+
+.wen-1{
+    margin-left: 96px;
+    margin-top: 8px;
+}
+
+.i-1{
+    width: 32px;
+    height: 16px;
+    float: right;
+    margin-top: -15.2px;
+    margin-right: 40px;
+}
+
+i{
+    width: 100%;
+}
+
+ul{
+    flex-direction: column;
+    width: 80px;
+    height: 160px;
+    justify-content: space-between;
+    margin-left: 160px;
+    margin-top: 0px;
+}
+
+.cl{
+    width:80px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14.4px;
+    color:#666666;
+    font-family: SimHei;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cl:hover {
+    height: 32px;
+    width: 80px;
+    background-color: #39f;
+    border-radius: 13.6px;
+    border: 0.8px solid #ffffff;
+    color:#000000;
+}
+
+.box-right{
+    width: 1260.8px;
+    height: 777.6px;
+    background-color: #94c8fd;
+    float: right;
+}
+
+.box-right-top{
+    width: 1260.8px;
+    height: 423.2px;
+}
+
+.box-right-top-left{
+    width: 694.4px;
+    height: 391.2px;
+    background-color: #ffffff;
+    float: left;
+    margin-left: 56.8px;
+    margin-top: 24px;
+}
+
+.box-right-top-right{
+    width: 436px;
+    height: 391.2px;
+    background-color:#ffffff;
+    float: right;
+    margin-top: 24px;
+    margin-right: 55.2px;
+}
+
+.brtl-top{
+    height: 73.6px;
+    width: 100%;
+    border-bottom-style: solid;
+    border-width:0.8px ;
+    border-bottom-color:#bfbfbf;
+}
+
+.brtl-bottom{
+    width: 694.4px;
+    height: 296px;
+    border-top-style: solid;
+    border-width: 0.8px;
+    border-top-color: #bfbfbf;
+}
+
+.bottom-top,.bottom-bottom{
+    width: 694.4px;
+    height: 148px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.li-1,.li-2{
+    width: 104px;
+    height: 88px;
+}
+
+
+.li-1{
+    margin-top: 32px;
+}
+
+.li-2{
+    margin-top: 8px;
+}
+.li-1-1,.li-2-1{
+    font-size: 16.8px;
+    font-family: SimHei;
+    color: #666666;
+    letter-spacing: 2.4px;
+    text-align: center;
+}
+
+.li-1-2,.li-2-2{
+    font-size: 28.8px;
+    font-family: MicrosoftYaHei-Bold;
+    color: #333333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.brtl-bottom-1{
+    height: 89.6px;
+    width: 88.8px;
+    margin: 0 auto;
+    margin-top: 19.2px;
+}
+
+.brtl-bottom-1 img{
+    width: 100%;
+}
+
+.brtl-bottom-2{
+    font-size: 24px;
+    color: #000000;
+    font-family: microsoftyaheibold;
+    margin-left: 196px;
+}
+
+.brtl-bottom-3,.brtl-bottom-4{
+    font-size: 19.2px;
+    color: #666666;
+    font-family: SimSun;
+    margin-top: 24px;
+}
+
+.brtl-bottom-5{
+    width: 172px;
+    height: 16.8px;
+    margin-left: 144px;
+    margin-top: 12px;
+}
+
+.brtlb-1{
+    float: left;
+    height: 100%;
+}
+
+.brtlb-2{
+    float: right;
+    margin-top: 4px;
+}
+
+.brtlb-2 a{
+    font-size: 14.4px;
+    font-family: SimSun;
+    color: #39f;
+}
+.b1{
+    margin-left: 192.8px;
+}
+
+.b2{
+    margin-left: 128px;
+}
+.p1{
+    margin-top: 21.6px;
+    margin-left: 36px;
+    font-size: 22.4px;
+    color: #333333;
+    font-family: SimHei;
+}
+
+.p2{
+    margin-top: 18.4px;
+    margin-left: 36px;
+    font-size: 16.8px;
+    color: #999999;
+    font-family: SimHei;
+}
+
+.box-right-bottom{
+    width: 1149.6px;
+    height: 321.6px;
+    background-color: #ffffff;
+    margin-top: 24px;
+    margin-right: 55.2px;
+    float: right;
+}
+
+.brbt-top{
+    height: 73.6px;
+    width: 100%;
+    border-bottom-style: solid;
+    border-width:0.8px ;
+    border-bottom-color:#bfbfbf;
+    margin-top: 0px;
+}
+
+.box-right-bottom-bottom{
+    height: 225.6px;
+
+}
+
+.brbb-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.li-ol{
+    height: 155.2px;
+    width: 151.2px;
+    overflow: hidden;
+}
+
+.li-ol img{
+    width: 100%;
+}
+.li{
+    position: absolute;
+}

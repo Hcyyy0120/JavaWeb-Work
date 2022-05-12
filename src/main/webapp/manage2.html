@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/reseat.css">
+        <link rel="stylesheet" href="./css/all.css">
+        <link rel="stylesheet" href="./css/page2.css">
+        <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+        <script src="js/vue.js"></script>
+        <script src="element-ui/lib/index.js"></script>
+        <script src="js/axios-0.18.0.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="box">
+                <div class="top">
+                    <div class="top-left" style="box-shadow:0px 0px 5px 0px #aaa inset;">
+                        <p class="left-1">湖南科技大学</p>
+                        <p class="left-2">出卷系统</p>
+                    </div>
+                    <div class="top-right" style="box-shadow:0px 0px 5px 0px #aaa inset;">
+                        <div class="right-1">
+                            <div class="a-1">
+                                <a href="manage2.html">
+                                    <img src="images/refresh.png" alt="">
+                                </a>
+                            </div>
+                            <div class="a-2">
+                                <a href="manage1.html" class="a-2">
+                                    <img src="images/quiet.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-left">
+                    <div class="box-left-1">
+                        <div class="box-left-1-left">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="box-left-1-right">
+                            <p class="r1">院级管理员</p>
+                            <p class="r2">张三</p>
+                        </div>
+                    </div>
+                    <div class="box-left-2">
+                        <div class="box-left-2-1 c1">
+                            <div class="img-1 c3"><img src="images/3.png" alt=""></div>
+                            <div class="wen-1 c4">用户管理</div>
+                            <div class="ul-li">
+                                <div class="i-1">
+                                    <i class="fas fa-angle-left" @click="showList" v-show="!isShow"></i>
+                                    <i class="fas fa-angle-down" @click="showList" v-show="isShow"></i>
+                                </div>
+                                <ul v-show="isShow">
+                                    <div class="cl ccl"><a href="manage2.html">学生列表</a></div>
+                                    <div class="cl"><a href="">老师列表</a></div>
+                                    <div class="cl"><a href="">批量导入</a></div>
+                                    <div class="cl"><a href="">发布通知</a></div>
+                                    <div class="cl"><a href="">审核注册</a></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box-left-2-1 c2">
+                            <div class="img-1"><img src="images/4.png" alt=""></div>
+                            <div class="wen-1">课程管理</div>
+                            <div class="i-1"><i class="fas fa-angle-left"></i></div>
+                        </div>
+                        <div class="box-left-2-1">
+                            <div class="img-1"><img src="images/5.png" alt=""></div>
+                            <div class="wen-1">课程组管理</div>
+                        </div>
+                        <div class="box-left-2-1">
+                            <div class="img-1"><img src="images/6.png" alt=""></div>
+                            <div class="wen-1">班级管理</div>
+                        </div>
+                        <div class="box-left-2-1">
+                            <div class="img-1"><img src="images/7.png" alt=""></div>
+                            <div class="wen-1">专业管理</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-right">
+                    <div class="center">
+                        <div class="center-top">
+                            <p class="p1">学生列表</p>
+                            <p class="p2">本日学生列表内容已更新</p>
+                        </div>
+                        <div class="between">
+                            <form action="" method="get">
+                                <div class="box1">
+                                    <div class="box1-1">
+                                        <div class="d1">
+                                            账号 <input type="text" v-model="student.account" name="account">
+                                        </div>
+                                        <div class="d2">
+                                            姓名<input type="text" v-model="student.name" name="name">
+                                        </div>
+                                    </div>
+                                    <div class="box1-2">
+                                        <div class="d3">
+                                            专业<input type="text" v-model="student.major" name="major">
+                                        </div>
+                                        <div class="d4">
+                                            班级<input type="text" v-model="student.classId" name="classId">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box2">
+                                    <input type="button" class="submit" name="query" @click="queryStu" value="查询"/>
+                                    <input type="button" class="button" @click="dialogVisible = true" name="add"
+                                           value="新增"/>
+                                    <input type="reset" class="reset" @click="reset" name="reset" value="重置"/>
+                                    
+                                    <!--对话框-->
+                                    <el-dialog
+                                            title="添加学生信息"
+                                            :visible.sync="dialogVisible"
+                                            width="30%">
+                                        <span slot="footer" class="dialog-footer"></span>
+                                        <el-form ref="form" :model="student" label-width="80px">
+                                            <el-form-item label="姓名">
+                                                <el-input v-model="student.name"></el-input>
+                                            </el-form-item>
+                                            <el-form-item label="专业">
+                                                <el-input v-model="student.major"></el-input>
+                                            </el-form-item>
+                                            <el-form-item label="班级">
+                                                <el-input v-model="student.classId"></el-input>
+                                            </el-form-item>
+                                            <el-button type="primary" @click="addStu">确定</el-button>
+                                            <el-button @click="dialogVisible = false">取消</el-button>
+                                            </el-form-item>
+                                        </el-form>
+                                    </el-dialog>
+                                </div>
+                            </form>
+                        </div>
+                        <br>
+                        <br>
+                        <template>
+                            <el-table
+                                    :data="students"
+                                    height="420"
+                                    border
+                                    :header-cell-style="{background:'#cccccc'}"
+                                    style="width: 80%;font-size: 22px;margin: 0px 70px">
+                                <el-table-column
+                                        prop="account"
+                                        label="账号"
+                                        align="center">
+                                </el-table-column>
+                                <el-table-column
+                                        prop="name"
+                                        label="姓名"
+                                        align="center">
+                                </el-table-column>
+                                <el-table-column
+                                        prop="major"
+                                        label="专业"
+                                        align="center">
+                                </el-table-column>
+                                </el-table-column>
+                                <el-table-column
+                                        prop="classId"
+                                        label="班级"
+                                        align="center">
+                                </el-table-column>
+                                <el-table-column
+                                        fixed="right"
+                                        label="操作"
+                                        align="center">
+                                    <!--<el-row>--><!--@click="editStu(scope.student)"-->
+                                    <template slot-scope="scope">
+                                        <el-button @click="showEditMsg(scope.row)" type="primary"
+                                                   icon="el-icon-edit"
+                                                   circle></el-button>
+                                        <el-button @click="isDelete(scope.row)" type="danger" icon="el-icon-delete"
+                                                   circle></el-button><!--@click="open"-->
+                                    </template>
+                                    <!--</el-row>-->
+                                </el-table-column>
+                            </el-table>
+                        </template>
+                        
+                        <el-dialog
+                                title="修改学生信息"
+                                :visible.sync="showEditList"
+                                width="30%">
+                            <span slot="footer" class="dialog-footer"></span>
+                            <el-form ref="form" :model="editData" label-width="80px">
+                                <el-form-item label="账号">
+                                    <el-input v-model="editData.student.account"></el-input>
+                                </el-form-item>
+                                <el-form-item label="姓名">
+                                    <el-input v-model="editData.student.name"></el-input>
+                                </el-form-item>
+                                <el-form-item label="专业">
+                                    <el-input v-model="editData.student.major"></el-input>
+                                </el-form-item>
+                                <el-form-item label="班级">
+                                    <el-input v-model="editData.student.classId"></el-input>
+                                </el-form-item>
+                                <el-button type="primary" @click="editStu">确定</el-button>
+                                <el-button @click="showEditList = false">取消</el-button>
+                                </el-form-item>
+                            </el-form>
+                        </el-dialog>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            new Vue({
+                el: "#app",
+                mounted() {
+                    var _this = this;
+                    axios({
+                        method: "get",
+                        url: "http://localhost:8080/PageSys/selectAll"
+                    }).then(function (response) {
+                        _this.students = response.data;
+                    })
+                },
+                methods: {
+                    showEditMsg:function (student) {
+                        this.showEditList = true;
+                        this.editData.student = student;
+                    },
+                    editStu: function () {
+                        var _this = this;
+                        /*console.log(this.editData.student);*/
+                        axios({
+                            method: "post",
+                            url: "http://localhost:8080/PageSys/updateStu",
+                            data: _this.editData.student
+                        }).then(function (response) {
+                                _this.showEditList = false;
+                                location.href = "http://localhost:8080/PageSys/manage2.html";
+                            
+                        })
+                    },
+                    reset: function () {
+                        this.students = [];
+                        this.student = "";
+                    },
+                    showList: function () {
+                        this.isShow = !this.isShow;
+                    },
+                    queryStu: function () {
+                        var _this = this;
+                        axios({
+                            method: "post",
+                            url: "http://localhost:8080/PageSys/selectByCondition",
+                            data: _this.student
+                        }).then(function (response) {
+                            console.log(response.data);
+                            _this.students = response.data;
+                        })
+                    },
+                    addStu() {
+                        var _this = this;
+                        axios({
+                            method: "post",
+                            url: "http://localhost:8080/PageSys/add",
+                            data: _this.student
+                        }).then(function (response) {
+                                _this.dialogVisible = false;
+                                location.href = "http://localhost:8080/PageSys/manage2.html";
+                            
+                        })
+                    },
+                    deleteStu(student) {
+                        var _this = this;
+                        axios({
+                            method: "post",
+                            url: "http://localhost:8080/PageSys/deleteStuByAccount",
+                            data: student
+                        }).then(function () {
+                            location.href = "http://localhost:8080/PageSys/manage2.html";
+                        })
+                    },
+                    isDelete(student) {
+                        this.$confirm('此操作将删除该学生信息, 是否继续?', '提示', {
+                            confirmButtonText: '确定',
+                            cancelButtonText: '取消',
+                            type: 'warning'
+                        }).then(() => {
+                            this.deleteStu(student)
+                            this.$message({
+                                type: 'success',
+                                /*message: '删除成功!'*/
+                            });
+                            
+                        }).catch(() => {
+                            this.$message({
+                                type: 'error',
+                                message: '已取消删除'
+                            });
+                        });
+                    }
+                },
+                data() {
+                    return {
+                        dialogVisible: false,
+                        showEditList: false,
+                        isShow: false,
+                        students: [],
+                        student: {
+       /*                     account: "",
+                            name: "",
+                            major: "",
+                            classId: ""*/
+                        },
+                        editData: {
+                            student: {
+                                account: "",
+                                name: "",
+                                major: "",
+                                classId: ""
+                            }
+                        }
+                    };
+                }
+            })
+        </script>
+    </body>
+
+</html>
